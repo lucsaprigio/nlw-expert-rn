@@ -13,7 +13,7 @@ import { Button } from "@/components/button";
 import { Feather } from "@expo/vector-icons";
 import { LinkButton } from "@/components/link-button";
 
-const PHONE_NUMBER = "5527996940045";
+const PHONE_NUMBER = process.env.PHONE;
 
 export default function Cart() {
     const navigation = useNavigation();
