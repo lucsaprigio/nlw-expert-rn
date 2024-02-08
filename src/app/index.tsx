@@ -3,7 +3,7 @@ import { CategoryButton } from '@/components/category-button';
 import { Header } from '@/components/header';
 import { View, FlatList, SectionList, Text } from 'react-native';
 
-import { CATEGORIES, MENU } from "@/utils/data/products";
+import { CATEGORIES, MENU, ProductProps } from "@/utils/data/products";
 import { Product } from '@/components/product';
 import { Link } from 'expo-router';
 import { useCartStore } from '@/stores/cart-store';
@@ -13,7 +13,7 @@ export default function Home() {
     const [category, setCategory] = useState(CATEGORIES[0]);
 
     // Usando a referencia direto no nosso SectionList para poder manipular o filtro
-    const sectionListRef = useRef<SectionList>(null);
+    const sectionListRef = useRef<SectionList<ProductProps>>(null);
 
     const cartQuantityItems = cartStore.products.reduce((total, product) => total + product.quantity, 0);
 
